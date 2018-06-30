@@ -40,14 +40,15 @@ if (isset($_POST['func']) && $_POST['func'] == 'addLead') {
                     echo "Error saving lead: " . $query_data['error_description'];
             } else
                 echo 'Successfuly added a new lead';
-        } else
-            echo 'No access token';
-    }
-    else {
+        } else {
+            $ref = refresh();
+            if (!$ref)
+                echo 'No access token';
+        }
+    }else {
         echo 'error';
     }
 }
-
 
 function refresh() {
     $paramsRefreshToken = array(
