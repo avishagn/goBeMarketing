@@ -64,7 +64,7 @@ function refresh() {
 
     if (isset($query_data["access_token"])) {
         $_SESSION['query_data'] = $query_data;
-        echo true;
+        return true;
     } else
-        echo false;
+        return false;
 }
