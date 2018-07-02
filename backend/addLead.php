@@ -24,8 +24,8 @@ if (isset($_POST['func']) && $_POST['func'] == 'addLead') {
                     "TITLE" => $fname . '-' . $lname,
                     "NAME" => $fname,
                     "LAST_NAME" => $lname,
-                    "PHONE" => $phone,
-                    "EMAIL" => $email
+                    "PHONE" => array(array("VALUE" => $phone, "VALUE_TYPE" => "WORK" )),
+                    "EMAIL" => array(array("VALUE" => $email, "VALUE_TYPE" => "WORK" ))
                 )
             );
 
