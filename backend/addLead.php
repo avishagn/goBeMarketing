@@ -29,10 +29,10 @@ if (isset($_POST['func']) && $_POST['func'] == 'addLead') {
                 )
             );
 
-            $query_data = query('https://' . BITRIX24 . '.bitrix24.com/rest/crm.deal.add?', $addParams);
+            $query_data = query('https://' . BITRIX24 . '.bitrix24.com/rest/crm.lead.add?', $addParams);
 
             if (array_key_exists('error', $query_data)) {
-                if ($query_data['error_description'] === 'The access token provided has expired') {
+                if ($query_data['error_description'] === 'The access token provided has expired.') {
                     $ref = refresh();
                     if (!$ref)
                         echo 'Faile to refresh';
